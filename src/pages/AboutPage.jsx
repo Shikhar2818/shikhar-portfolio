@@ -60,23 +60,9 @@ function TimelineItem({ item, index, isLast }) {
               </div>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-3">
-              {item.metrics.map((m) => (
-                <div
-                  key={m.label}
-                  className="rounded-lg bg-white/5 px-3 py-1.5 text-center"
-                >
-                  <p className="text-[10px] uppercase tracking-wider text-slate-500">
-                    {m.label}
-                  </p>
-                  <p className="text-xs font-semibold text-white">{m.value}</p>
-                </div>
-              ))}
-            </div>
-
             <ChevronDown
               size={18}
-              className={`mt-4 text-slate-500 transition-transform duration-300 ${
+              className={`mt-5 text-slate-500 transition-transform duration-300 ${
                 expanded ? "rotate-180" : ""
               }`}
             />

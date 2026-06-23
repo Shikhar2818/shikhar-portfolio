@@ -196,3 +196,20 @@ body {
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
 }
+
+@keyframes tech-logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-logo-track {
+  animation: tech-logo-scroll 28s linear infinite;
+}
+
+.tech-logo-track:hover {
+  animation-play-state: paused;
+}

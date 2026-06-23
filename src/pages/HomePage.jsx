@@ -147,7 +147,7 @@ export default function HomePage() {
             {
               icon: Code2,
               label: "Projects",
-              value: "2+ Built",
+              value: "4+ Built",
             },
             {
               icon: Sparkles,

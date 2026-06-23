@@ -1,23 +1,10 @@
-import {
-  Brain,
-  Cloud,
-  Code2,
-  Globe,
-  Layers,
-} from "lucide-react";
+import { Brain, Cloud, Code2, Globe, Layers } from "lucide-react";
 import SectionHeading from "../components/ui/SectionHeading";
 import { FadeIn } from "../components/ui/PageTransition";
 import GlowCard from "../components/ui/GlowCard";
 import { skillCategories } from "../data/portfolio";
 
 const iconMap = { Code2, Layers, Brain, Globe, Cloud };
-
-const tierFromLevel = (level) => {
-  if (level >= 88) return { label: "Advanced", tone: "text-emerald-400" };
-  if (level >= 80) return { label: "Proficient", tone: "text-blue-400" };
-  if (level >= 72) return { label: "Intermediate", tone: "text-slate-400" };
-  return { label: "Familiar", tone: "text-slate-500" };
-};
 
 const accentStyles = {
   emerald: {
@@ -46,29 +33,29 @@ const accentStyles = {
   },
 };
 
-function SkillRow({ name, level, accent }) {
-  const tier = tierFromLevel(level);
-  const filledDots = Math.ceil(level / 25);
+const techStackLogos = [
+  { label: "Py", name: "Python" },
+  { label: "Jv", name: "Java" },
+  { label: "C++", name: "C++" },
+  { label: "JS", name: "JavaScript" },
+  { label: "Go", name: "Go" },
+  { label: "Fa", name: "FastAPI" },
+  { label: "Dj", name: "Django" },
+  { label: "Re", name: "React" },
+  { label: "As", name: "AstroJS" },
+  { label: "Tw", name: "Tailwind CSS" },
+  { label: "Pg", name: "PostgreSQL" },
+  { label: "Aws", name: "AWS" },
+  { label: "Dk", name: "Docker" },
+  { label: "Git", name: "GitHub" },
+];
 
+function SkillPill({ name, accent }) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-white/5 py-3 last:border-0">
-      <span className="text-sm text-slate-200">{name}</span>
-      <div className="flex items-center gap-3">
-        <div className="hidden items-center gap-1 sm:flex">
-          {[1, 2, 3, 4].map((dot) => (
-            <span
-              key={dot}
-              className={`h-1.5 w-1.5 rounded-full ${
-                dot <= filledDots ? accent.dot : "bg-white/10"
-              }`}
-            />
-          ))}
-        </div>
-        <span className={`min-w-[5.5rem] text-right text-xs font-medium ${tier.tone}`}>
-          {tier.label}
-        </span>
-      </div>
-    </div>
+    <span className="inline-flex items-center gap-2 rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-sm font-medium text-slate-200">
+      <span className={`h-1.5 w-1.5 rounded-full ${accent.dot}`} />
+      {name}
+    </span>
   );
 }
 
@@ -77,11 +64,16 @@ export default function SkillsPage() {
     "Python",
     "Java",
     "C++",
+    "JavaScript",
+    "Go",
     "FastAPI",
-    "Machine Learning",
+    "Django",
+    "React",
+    "AstroJS",
+    "Tailwind CSS",
     "PostgreSQL",
     "AWS",
-    "System Design",
+    "Docker",
   ];
 
   return (
@@ -91,7 +83,7 @@ export default function SkillsPage() {
           <SectionHeading
             eyebrow="Expertise"
             title="Technical skills"
-            description="Core competencies across software engineering, AI/ML, backend systems, and cloud infrastructure."
+            description="Tools and foundations I use across software engineering, web development, data work, cloud, and core computer science."
           />
         </FadeIn>
       </section>
@@ -120,7 +112,7 @@ export default function SkillsPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {skillCategories.map((category, index) => {
             const Icon = iconMap[category.icon] || Code2;
-            const accent = accentStyles[category.color];
+            const accent = accentStyles[category.color] || accentStyles.emerald;
 
             return (
               <FadeIn key={category.id} delay={index * 40}>
@@ -136,19 +128,14 @@ export default function SkillsPage() {
                         {category.title}
                       </h3>
                       <p className="text-xs text-slate-500">
-                        {category.skills.length} competencies
+                        {category.skills.length} skills
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-1">
+                  <div className="mt-5 flex flex-wrap gap-3">
                     {category.skills.map((skill) => (
-                      <SkillRow
-                        key={skill.name}
-                        name={skill.name}
-                        level={skill.level}
-                        accent={accent}
-                      />
+                      <SkillPill key={skill} name={skill} accent={accent} />
                     ))}
                   </div>
                 </GlowCard>
@@ -160,14 +147,26 @@ export default function SkillsPage() {
 
       <section className="pb-8">
         <FadeIn delay={100}>
-          <div className="rounded-2xl border border-white/5 bg-white/[0.02] px-6 py-5">
-            <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
-              <span>Proficiency key</span>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-emerald-400">Advanced — production-ready</span>
-                <span className="text-blue-400">Proficient — strong working knowledge</span>
-                <span className="text-slate-400">Intermediate — actively developing</span>
-                <span className="text-slate-500">Familiar — foundational exposure</span>
+          <div className="overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] py-5">
+            <p className="px-6 text-xs font-medium uppercase tracking-wider text-slate-500">
+              Tech stack
+            </p>
+            <div className="mt-4 flex overflow-hidden">
+              <div className="tech-logo-track flex min-w-max items-center gap-4 pr-4">
+                {[...techStackLogos, ...techStackLogos].map((tech, index) => (
+                  <div
+                    key={`${tech.name}-${index}`}
+                    className="flex min-w-32 items-center gap-3 rounded-xl border border-white/5 bg-slate-950/60 px-4 py-3"
+                    aria-hidden={index >= techStackLogos.length}
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/10 text-xs font-bold text-emerald-300 ring-1 ring-emerald-500/20">
+                      {tech.label}
+                    </span>
+                    <span className="text-sm font-medium text-slate-200">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

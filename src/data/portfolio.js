@@ -11,7 +11,7 @@ export const personal = {
   awsCertUrl:
     "https://drive.google.com/file/d/1M_62gCrFaVVpIR0gPfnhvqaEL-K1VFaP/view?usp=sharing",
   summary:
-    "Computer Science and Engineering undergraduate with internship experience at the Ministry of New and Renewable Energy, Government of India. Strong foundation in data structures, algorithms, object-oriented programming, system design, and automation, with proficiency in C++, Python, and Java. Built real-world projects including an IRCTC automation system and ChronoGann, an AI/ML and Generative AI-powered market research platform. AWS Cloud Foundations certified, with knowledge of cloud architecture, deployment workflows, and services including EC2, S3, and IAM.",
+    "Computer Science and Engineering undergraduate with internship experience at Aditya Birla Group and the Ministry of New and Renewable Energy, Government of India. Strong foundation in data structures, algorithms, object-oriented programming, system design, automation, and full-stack development using C++, Python, Java, and modern web technologies. Built real-world projects including an IRCTC automation system and ChronoGann, an AI/ML and Generative AI-powered market research platform. AWS Cloud Foundations certified, with knowledge of cloud architecture, deployment workflows, and services including EC2, S3, and IAM.",
 };
 
 export const heroSubtitles = [
@@ -23,11 +23,24 @@ export const heroSubtitles = [
 
 export const experience = [
   {
+    id: "aditya-birla-intern",
+    role: "IT Intern",
+    company: "Aditya Birla Group",
+    location: "Renukoot, Uttar Pradesh",
+    period: "June 2026 - Present",
+    type: "Industry Internship",
+    highlights: [
+      "Designing and developing ChronoGann, a quantitative time-cycle analysis platform.",
+      "Assisted in troubleshooting software issues, ensuring minimal disruption to daily operations.",
+      "Implementing data visualization, backtesting, and analytical tools for market research.",
+    ],
+  },
+  {
     id: "mnre-intern",
     role: "Software Engineer Intern",
     company: "Ministry of New and Renewable Energy",
     location: "Delhi, India",
-    period: "Jul 2025 — Sep 2025",
+    period: "Jul 2025 - Sep 2025",
     type: "Government Internship",
     highlights: [
       "Performed software testing, bug identification, and validation to improve application reliability and functionality.",
@@ -36,19 +49,14 @@ export const experience = [
       "Collaborated with cross-functional teams to analyze workflows, troubleshoot issues, and support ongoing software development initiatives.",
       "Contributed to application maintenance, data management, and process optimization to enhance operational efficiency.",
     ],
-    metrics: [
-      { label: "Duration", value: "3 Months" },
-      { label: "Focus", value: "Reliability & QA" },
-      { label: "Domain", value: "GovTech" },
-    ],
   },
 ];
 
 export const education = {
-  degree: "B.Tech — Computer Science and Engineering (CSE)",
+  degree: "B.Tech - Computer Science and Engineering (CSE)",
   institution: "Bennett University",
   location: "Greater Noida",
-  period: "Aug 2024 — Aug 2028",
+  period: "Aug 2024 - Aug 2028",
   gpa: "8.54 / 10",
   highlights: [
     "In Tech Team AWS Cloud Solutions",
@@ -62,7 +70,7 @@ export const projects = [
     id: "chronogann",
     title: "ChronoGann",
     subtitle: "AI/ML-Powered Quantitative Time-Cycle Analysis Platform",
-    period: "Apr 2026 — Jun 2026",
+    period: "Apr 2026 - Jun 2026",
     category: "AI/ML",
     description:
       "Quantitative market research platform inspired by W.D. Gann's time-cycle theory for stocks, indices, forex, commodities, and crypto. Features cycle projection, convergence detection, historical backtesting, ML-based confidence scoring, and GenAI-generated research summaries.",
@@ -80,15 +88,68 @@ export const projects = [
       "Added ML-based confidence scoring and GenAI-generated research summaries for cycle behavior and market context.",
       "Designed a cost-efficient serverless architecture using AWS Lambda, FastAPI, and PostgreSQL.",
     ],
-    github: "#",
+    github: "https://github.com/Shikhar2818/chronogann",
     demo: "#",
     featured: true,
+  },
+  {
+    id: "digital-psychological-intervention",
+    title: "Digital Psychological Intervention Platform",
+    subtitle: "Student Mental Health Support Platform",
+    period: "GitHub Project",
+    category: "Full Stack",
+    description:
+      "Comprehensive mental health support platform for college students with counselling bookings, mental health screenings, educational resources, and AI-powered chat support.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Express",
+      "MongoDB",
+      "Docker",
+    ],
+    highlights: [
+      "Built role-based student, counsellor, and admin workflows with protected routes and JWT authentication.",
+      "Implemented PHQ-9 and GAD-7 screening flows with severity analysis and anonymized admin analytics.",
+      "Added counselling bookings, multilingual resources, email notifications, and chatbot-ready support flows.",
+    ],
+    github:
+      "https://github.com/Shikhar2818/Digital-Psychological-Intervention-Platform",
+    demo: "#",
+    featured: false,
+  },
+  {
+    id: "pdf-hub",
+    title: "PDF Hub",
+    subtitle: "PDF Tools SaaS Platform",
+    period: "GitHub Project",
+    category: "Full Stack",
+    description:
+      "Production-grade PDF tools SaaS foundation with authenticated dashboards, usage limits, file history, billing-ready APIs, storage abstraction, and worker-based PDF processing.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+      "FastAPI",
+    ],
+    highlights: [
+      "Designed protected account, dashboard, history, files, billing, and settings routes using Auth.js.",
+      "Integrated Prisma data models for users, tool runs, file assets, usage counters, and billing hooks.",
+      "Connected a Python FastAPI worker pipeline for PDF jobs including merge, split, OCR, and AI-ready tools.",
+    ],
+    github: "https://github.com/Shikhar2818/pdf-hub",
+    demo: "#",
+    featured: false,
   },
   {
     id: "irctc-automation",
     title: "IRCTC Ticket Booking Automation",
     subtitle: "End-to-End Web Automation System",
-    period: "Jan 2025 — Mar 2025",
+    period: "Jan 2025 - Mar 2025",
     category: "Automation",
     description:
       "End-to-end IRCTC ticket booking automation covering login, train search, quota/class selection, and passenger data entry with OCR-based captcha handling and modular architecture.",
@@ -107,7 +168,7 @@ export const projects = [
   },
 ];
 
-export const projectCategories = ["All", "AI/ML", "Automation"];
+export const projectCategories = ["All", "AI/ML", "Full Stack", "Automation"];
 
 export const skillCategories = [
   {
@@ -115,66 +176,54 @@ export const skillCategories = [
     title: "Programming Languages",
     icon: "Code2",
     color: "emerald",
+    skills: ["Python", "Java", "C++", "JavaScript", "Go"],
+  },
+  {
+    id: "frameworks-libraries",
+    title: "Frameworks & Libraries",
+    icon: "Brain",
+    color: "blue",
     skills: [
-      { name: "Java", level: 85 },
-      { name: "Python", level: 90 },
-      { name: "C++", level: 88 },
-      { name: "Go", level: 70 },
-      { name: "JavaScript", level: 82 },
+      "FastAPI",
+      "Django",
+      "Selenium",
+      "NumPy",
+      "Pandas",
+      "PyTorch",
+      "Scikit-learn",
     ],
   },
   {
-    id: "software-dev",
-    title: "Software Development",
+    id: "web-development",
+    title: "Web Development",
+    icon: "Globe",
+    color: "violet",
+    skills: ["React", "AstroJS", "Tailwind CSS", "REST APIs"],
+  },
+  {
+    id: "databases",
+    title: "Databases",
+    icon: "Cloud",
+    color: "cyan",
+    skills: ["PostgreSQL", "MySQL", "MongoDB"],
+  },
+  {
+    id: "cloud-tools",
+    title: "Cloud & Tools",
+    icon: "Layers",
+    color: "emerald",
+    skills: ["AWS", "Docker", "Git", "GitHub"],
+  },
+  {
+    id: "core-cs",
+    title: "Core CS",
     icon: "Layers",
     color: "blue",
     skills: [
-      { name: "Data Structures & Algorithms", level: 90 },
-      { name: "Object-Oriented Programming", level: 88 },
-      { name: "System Design", level: 78 },
-      { name: "Problem Solving", level: 92 },
-    ],
-  },
-  {
-    id: "ai-data",
-    title: "AI & Data Science",
-    icon: "Brain",
-    color: "violet",
-    skills: [
-      { name: "NumPy", level: 85 },
-      { name: "Pandas", level: 88 },
-      { name: "Scikit-learn", level: 82 },
-      { name: "PyTorch", level: 75 },
-      { name: "Machine Learning", level: 80 },
-      { name: "Generative AI", level: 78 },
-    ],
-  },
-  {
-    id: "web-backend",
-    title: "Web & Backend Development",
-    icon: "Globe",
-    color: "cyan",
-    skills: [
-      { name: "HTML / CSS", level: 85 },
-      { name: "REST APIs", level: 88 },
-      { name: "FastAPI", level: 86 },
-      { name: "Database Design", level: 82 },
-      { name: "Backend Integration", level: 84 },
-    ],
-  },
-  {
-    id: "databases-cloud",
-    title: "Databases & Cloud",
-    icon: "Cloud",
-    color: "emerald",
-    skills: [
-      { name: "MySQL", level: 82 },
-      { name: "MongoDB", level: 78 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "AWS EC2", level: 80 },
-      { name: "AWS S3", level: 82 },
-      { name: "AWS IAM", level: 78 },
-      { name: "Serverless Architecture", level: 76 },
+      "Data Structures & Algorithms",
+      "OOP",
+      "Software Testing",
+      "System Design",
     ],
   },
 ];
